@@ -10,19 +10,13 @@ import ProductsList from '../components/UI/ProductsList'
 import products from "../assets/data/products"
 import counterImg from "../assets/images/counter-timer-img.png"
 import Clock from '../components/UI/Clock'
-
 const Home = () => {
-
-
 const [trendingProducts,setTrendingProducts] = useState([]);
 const [bestSalesProducts,setBestSalesProducts] = useState([]);
 const [mobileProducts, setMobileProducts] = useState([])
 const [wirelessProducts, setWirelessProducts] = useState([])
 const [popularProducts, setPopularProducts] = useState([])
-
-
 const year = new Date().getFullYear()
-
 useEffect(() =>{
   const filteredTrendingProducts = products.filter(item => item.category === 'chair');
   const filteredBestSalesProducts = products.filter(item => item.category === 'sofa');
@@ -34,10 +28,8 @@ useEffect(() =>{
   setMobileProducts(filteredMobileProducts)
   setWirelessProducts(filteredWirelessProducts)
   setPopularProducts(filteredPopularProducts)
-
 },[]);
-
-  return (
+return (
     <Helmet title={'Home'}>
       <section className="hero__section">
       <Container>
@@ -71,23 +63,19 @@ useEffect(() =>{
 <h2 className='section__title'>Trending Products</h2>
             </Col>
 <ProductsList data={trendingProducts}/>
-
           </Row>
         </Container>
       </section>
-
       <section className="best__sales">
         <Container>
         <Row>
             <Col lg='12' className="text-center">
 <h2 className='section__title'>Best Sales</h2>
             </Col>
-
             <ProductsList data={bestSalesProducts}/>
           </Row>
         </Container>
       </section>
-
       <section className="timer__count">
         <Container>
           <Row>
@@ -98,17 +86,14 @@ useEffect(() =>{
             </div>
             <Clock />
             <motion.button whileTap={{scale:1.2}} className="buy__btn store__btn"><Link to="/shop">Visit Store</Link></motion.button>
-
-            </Col>
+           </Col>
             <Col lg='6' md='12' className="text-end counter__img">
               <img src={counterImg} alt="" />
             </Col>
           </Row>
         </Container>
       </section>
-
-
-      <section className="new__arrivals">
+<section className="new__arrivals">
         <Container>
           <Row>
           <Col lg='12' className="text-center mb-5">
@@ -119,8 +104,6 @@ useEffect(() =>{
           </Row>
         </Container>
       </section>
-
-
       <section className="popular__category">
       <Container>
           <Row>
@@ -132,9 +115,7 @@ useEffect(() =>{
           </Row>
         </Container>
       </section>
-
     </Helmet>
   )
 }
-
 export default Home

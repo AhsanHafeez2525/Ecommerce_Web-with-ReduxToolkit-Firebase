@@ -2,26 +2,18 @@ import React from 'react'
 import './footer.css'
 import { Container, Row,Col,ListGroup, ListGroupItem} from 'reactstrap'
 import { Link } from 'react-router-dom'
-// import logo from '../../assets/images/eco-logo.png'
-
-
 const Footer = () => {
-
 const year = new Date().getFullYear();
-
   return (
 <footer className="footer">
   <Container>
     <Row>
       <Col lg= '4' className='mb-4' md='6'>
       <div className="logo">
-            {/* <img src={logo} alt="logo" /> */}
             <div>
               <h1 className='text-white'>Multimart</h1>
             </div>
-
-
-            </div>
+          </div>
             <p className="footer__text mt-4">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quidem maiores porro, hic deserunt alias reiciendis excepturi sed eveniet dicta, eum qui iusto aut? Cupiditate reprehenderit assumenda recusandae in! Voluptatibus.
 </p>
@@ -46,7 +38,6 @@ const year = new Date().getFullYear();
     </ListGroupItem>
   </ListGroup>
 </div>
-
       </Col>
       <Col lg= '2' md='3' className='mb-4'>
       <div className="footer__quick-links">
@@ -68,11 +59,8 @@ const year = new Date().getFullYear();
     </ListGroupItem>
   </ListGroup>
 </div>
-
-
       </Col>
       <Col lg= '3' md='4'>
-
       <div className="footer__quick-links">
   <h4 className="quick__links-title">
     Contact
@@ -92,10 +80,8 @@ const year = new Date().getFullYear();
     </ListGroupItem>
   </ListGroup>
 </div>
-
-      </Col>
-      <Col lg='12'>
-      
+  </Col>
+      <Col lg='12'>    
 <p className="footer__copyright">
   Copyright {year} developed by Ahsan Hafeez. All rights reserved
 </p>

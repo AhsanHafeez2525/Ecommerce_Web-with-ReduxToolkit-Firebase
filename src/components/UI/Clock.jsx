@@ -1,16 +1,11 @@
 import React,{useState, useEffect} from 'react'
 import '../../styles/clock.css'
-
 const Clock = () => {
-
 const [days, setDays] = useState()
 const [hours, setHours] = useState()
 const [minutes, setMinutes] = useState()
 const [seconds, setSeconds] = useState()
-
-
 let interval;
-
 const countDown = () => {
     const destination = new Date ('Mar 25, 2023').getTime()
     interval = setInterval(() => {
@@ -20,7 +15,6 @@ const countDown = () => {
         const hours = Math.floor(different % (1000 * 60 * 60 * 24) / (1000*60*60) )
         const minutes = Math.floor(different % (1000 * 60 * 60 * 24) / (1000*60*60))
         const seconds = Math.floor(different % (1000 * 60) / (1000))
-
         if(destination < 0) clearInterval(interval.current)
         else{
             setDays(days)
@@ -30,13 +24,10 @@ const countDown = () => {
         }
     })
 }
-
 useEffect (() =>{
     countDown()
 })
-
-
-  return (
+ return (
    <div className="clock__wrapper d-flex align-items-center gap-3">
     <div className="clock__data d-flex align-items-center gap-3">
         <div className='text-center'>
@@ -68,5 +59,4 @@ useEffect (() =>{
    </div>
   )
 }
-
 export default Clock
